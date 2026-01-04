@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | GOGAP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body class="overflow-x-hidden text-slate-900">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12 logo-ring rounded-full flex items-center justify-center text-secondary font-bold text-xl shadow-md">
+                        <i data-lucide="leaf" class="w-6 h-6"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-black tracking-tighter text-primary leading-none uppercase">GOGAP</span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-accent font-bold">Garden of Grace & Prayer</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-primary font-bold transition-colors">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-primary font-bold transition-colors">About</a>
+                    <a href="sermons.html" class="text-slate-600 hover:text-primary font-bold transition-colors">Sermons</a>
+                    <a href="store.html" class="text-slate-600 hover:text-primary font-bold transition-colors">Store</a>
+                    <a href="contact.html" class="text-primary font-bold">Contact</a>
+                    <a href="offering.html" class="bg-secondary text-primary px-6 py-2.5 rounded-full font-extrabold hover:bg-primary hover:text-white transition-all shadow-lg">Give Now</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-primary">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full border-t border-brandLight p-6 space-y-4 shadow-2xl">
+            <a href="index.html" class="block text-lg font-bold text-primary">Home</a>
+            <a href="about.html" class="block text-lg font-bold text-primary">About</a>
+            <a href="sermons.html" class="block text-lg font-bold text-primary">Sermons</a>
+            <a href="store.html" class="block text-lg font-bold text-primary">Store</a>
+            <a href="offering.html" class="block text-lg font-bold text-secondary">Give Online</a>
+            <a href="contact.html" class="block text-lg font-bold text-primary">Contact</a>
+        </div>
+    </nav>
+
+    <main class="mt-20">
+        <section id="contact-page" class="py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="bg-brandLight rounded-[4rem] p-10 lg:p-20 overflow-hidden relative shadow-inner">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                        <div>
+                            <span class="text-accent font-black uppercase tracking-widest text-sm mb-2 block">Get in Touch</span>
+                            <h2 class="text-6xl font-black text-primary serif italic leading-tight mb-8">Let's Flourish Together</h2>
+                            <p class="text-slate-600 text-lg mb-12 leading-relaxed">Have a prayer request? Want to learn more about our community? Our heart is open to you.</p>
+                            
+                            <div class="space-y-10">
+                                <div class="flex gap-6 items-start">
+                                    <div class="w-16 h-16 bg-white rounded-3xl flex items-center justify-center shadow-md text-primary">
+                                        <i data-lucide="map-pin"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-primary">The Sanctuary</h4>
+                                        <p class="text-slate-500">45 Garden Road, Victory Estate, Lagos</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 items-start">
+                                    <div class="w-16 h-16 bg-white rounded-3xl flex items-center justify-center shadow-md text-secondary">
+                                        <i data-lucide="mail"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-primary">Email Us</h4>
+                                        <p class="text-slate-500">hello@gogapgarden.org</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-[3rem] p-10 shadow-2xl">
+                            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <input type="text" placeholder="Name" class="w-full bg-brandLight border-none rounded-2xl p-5 focus:ring-2 focus:ring-secondary outline-none font-bold text-primary">
+                                    <input type="email" placeholder="Email" class="w-full bg-brandLight border-none rounded-2xl p-5 focus:ring-2 focus:ring-secondary outline-none font-bold text-primary">
+                                </div>
+                                <textarea rows="5" placeholder="Your message or prayer request..." class="w-full bg-brandLight border-none rounded-2xl p-5 focus:ring-2 focus:ring-secondary outline-none font-bold text-primary"></textarea>
+                                <button type="submit" class="w-full bg-primary text-white py-5 rounded-2xl font-black text-lg shadow-xl hover:bg-secondary hover:text-primary transition-all uppercase tracking-widest">Send Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary pt-24 pb-12 text-white/70">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-14 h-14 logo-ring rounded-full flex items-center justify-center text-secondary font-black text-2xl shadow-2xl">G</div>
+                        <span class="text-4xl font-black text-white tracking-tighter serif italic">GOGAP</span>
+                    </div>
+                    <p class="max-w-md text-emerald-100/50 leading-relaxed mb-10 italic">
+                        "A garden where souls are nurtured by grace and strengthened through prayer."
+                    </p>
+                    <div class="flex gap-6">
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-primary transition-all"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-primary transition-all"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-primary transition-all"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-black uppercase tracking-widest mb-10 text-xs border-l-4 border-secondary pl-4">Discover</h4>
+                    <ul class="space-y-4 font-bold text-sm">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Our Beliefs</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Leadership</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Find a Life Group</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Testimonies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-black uppercase tracking-widest mb-10 text-xs border-l-4 border-secondary pl-4">Gatherings</h4>
+                    <ul class="space-y-6 text-sm">
+                        <li>
+                            <strong class="text-secondary block font-black uppercase text-xs">Sundays</strong>
+                            <p class="text-white">Empowerment: 8:00 AM</p>
+                            <p class="text-white">Celebration: 10:30 AM</p>
+                        </li>
+                        <li>
+                            <strong class="text-secondary block font-black uppercase text-xs">Midweek</strong>
+                            <p class="text-white">Wednesday Word: 6:00 PM</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center">
+                <p class="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">
+                    &copy; 2024 Garden of Grace and Prayer Sanctuary. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

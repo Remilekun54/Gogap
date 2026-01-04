@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
 </head>
-<body class="bg-slate-50">
+<body class="overflow-x-hidden text-slate-900">
 
     <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,82 +51,41 @@
         <a href="contact.html" class="block text-lg font-bold">Contact</a>
     </div>
 
-    <header class="relative h-[40vh] flex items-center justify-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 hero-gradient"></div>
-        <div class="relative z-10 text-center px-4">
-            <h1 class="text-5xl md:text-7xl font-black text-white serif mb-4">Upcoming Events</h1>
-            <p class="text-white/80 text-lg max-w-xl mx-auto">Join us as we gather to experience the transformative power of God's word and presence.</p>
-        </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 py-16">
-        
-        <div class="flex flex-col md:flex-row gap-4 justify-between items-center mb-12">
-            <div class="relative w-full md:w-96">
-                <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"></i>
-                <input type="text" placeholder="Search events..." class="w-full pl-12 pr-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#8B1A3E]/20 transition-all">
-            </div>
-            <div class="flex gap-2">
-                <button class="px-6 py-2 rounded-full bg-[#8B1A3E] text-white font-bold text-sm">All</button>
-                <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 font-bold text-sm hover:bg-slate-50">Conference</button>
-                <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 font-bold text-sm hover:bg-slate-50">Special Service</button>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
-                <div class="flex flex-col lg:flex-row">
-                    <div class="lg:w-2/5 h-64 lg:h-auto relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl text-center">
-                            <span class="block text-xl font-black text-[#8B1A3E]">12</span>
-                            <span class="block text-xs uppercase font-bold text-slate-500">Nov</span>
+    <main class="mt-32">
+        <section id="about-page" class="py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div class="relative">
+                        <div class="aspect-square bg-secondary rounded-[3rem] absolute -top-6 -left-6 -z-10 w-full"></div>
+                        <img src="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?auto=format&fit=crop&q=80&w=1000" class="rounded-[3rem] shadow-2xl object-cover aspect-square">
+                        <div class="absolute -bottom-10 -right-10 bg-white p-10 rounded-[2rem] shadow-2xl border-l-8 border-accent hidden md:block">
+                            <p class="text-primary font-black text-2xl serif italic">Est. 2012</p>
+                            <p class="text-slate-400 font-bold text-xs uppercase tracking-tighter">A Decade of Grace</p>
                         </div>
                     </div>
-                    <div class="lg:w-3/5 p-8">
-                        <span class="text-[#F5A623] font-bold text-xs uppercase tracking-widest mb-2 block">Special Encounter</span>
-                        <h2 class="text-2xl font-black text-slate-900 mb-4 serif">Grace Encounter Night</h2>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-3 text-slate-500 text-sm">
-                                <i data-lucide="clock" class="w-4 h-4 text-[#8B1A3E]"></i> 6:00 PM - 9:00 PM
+                    <div class="space-y-8">
+                        <div>
+                            <span class="text-accent font-black uppercase tracking-[0.3em] text-sm mb-2 block">Who We Are</span>
+                            <h2 class="text-5xl font-black text-primary serif">Our Story & Vision</h2>
+                        </div>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            The Garden of Grace and Prayer (GOGAP) was birthed out of a divine burden to see believers live a life of victory through the dual pillars of deep spiritual intimacy and practical biblical knowledge.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-primary font-black text-xl mb-2">Our Mission</h4>
+                                <p class="text-slate-500 text-sm">To cultivate a generation of believers who are spiritually fertile and doctrinally sound.</p>
                             </div>
-                            <div class="flex items-center gap-3 text-slate-500 text-sm">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-[#8B1A3E]"></i> Main Sanctuary, GOGAP Center
+                            <div>
+                                <h4 class="text-primary font-black text-xl mb-2">Our Vision</h4>
+                                <p class="text-slate-500 text-sm">To see the fragrance of God's grace spread across nations through consistent prayer.</p>
                             </div>
                         </div>
-                        <button class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-[#8B1A3E] transition-colors">Register Now</button>
+                        <a href="contact.html" class="inline-block bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-accent transition-all shadow-xl">Contact Our Team</a>
                     </div>
                 </div>
             </div>
-
-            <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
-                <div class="flex flex-col lg:flex-row">
-                    <div class="lg:w-2/5 h-64 lg:h-auto relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl text-center">
-                            <span class="block text-xl font-black text-[#8B1A3E]">19</span>
-                            <span class="block text-xs uppercase font-bold text-slate-500">Nov</span>
-                        </div>
-                    </div>
-                    <div class="lg:w-3/5 p-8">
-                        <span class="text-[#F5A623] font-bold text-xs uppercase tracking-widest mb-2 block">Empowerment</span>
-                        <h2 class="text-2xl font-black text-slate-900 mb-4 serif">Kingdom Finance Seminar</h2>
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center gap-3 text-slate-500 text-sm">
-                                <i data-lucide="clock" class="w-4 h-4 text-[#8B1A3E]"></i> 10:00 AM - 1:00 PM
-                            </div>
-                            <div class="flex items-center gap-3 text-slate-500 text-sm">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-[#8B1A3E]"></i> Empowerment Hall
-                            </div>
-                        </div>
-                        <button class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-[#8B1A3E] transition-colors">Book a Seat</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -190,8 +149,8 @@
             </div>
         </div>
     </footer>
-
     <script>
+        // Initialize Lucide icons
         lucide.createIcons();
     </script>
 </body>
