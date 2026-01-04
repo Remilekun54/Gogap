@@ -1,33 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOGAP | Garden of Grace and Prayer</title>
-    <!-- Tailwind CSS -->
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- GSAP for Animations -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js" defer></script>
-    <link rel="icon" type="image/jpeg" href="gogap logo.jpeg">
 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
+    <script src="{% static 'index.js' %}" defer></script>
+
+    <link rel="icon" type="image/jpeg" href="{% static 'images/gogap logo.jpeg' %}">
 </head>
 
 <body class="overflow-x-hidden text-slate-900">
 
     <!-- Navigation -->
+    {% load static %}
     <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.href='index.html'">
+
+                <a href="{% url 'home' %}" class="flex items-center gap-3 cursor-pointer">
                     <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-secondary shadow-md bg-white">
-                        <img src="/images/gogap logo.jpeg" alt="GOGAP Logo" class="w-full h-full object-cover">
+                        <img src="{% static 'images/gogap logo.jpeg' %}" alt="GOGAP Logo"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="flex flex-col">
                         <span
@@ -35,21 +41,24 @@
                         <span class="text-[10px] uppercase tracking-[0.1em] text-accent font-bold">Gospel of Grace &
                             Power</span>
                     </div>
-                </div>
+                </a>
 
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-slate-600 hover:text-primary font-bold transition-colors">Home</a>
-                    <a href="about.html" class="text-slate-600 hover:text-primary font-bold transition-colors">About</a>
-                    <a href="sermons.html"
+                    <a href="{% url 'home' %}"
+                        class="text-slate-600 hover:text-primary font-bold transition-colors">Home</a>
+                    <a href="{% url 'about' %}"
+                        class="text-slate-600 hover:text-primary font-bold transition-colors">About</a>
+                    <a href="{% url 'sermons' %}"
                         class="text-slate-600 hover:text-primary font-bold transition-colors">Sermons</a>
-                    <a href="store.html" class="text-slate-600 hover:text-primary font-bold transition-colors">Store</a>
-                    <a href="contact.html"
+                    <a href="{% url 'store' %}"
+                        class="text-slate-600 hover:text-primary font-bold transition-colors">Store</a>
+                    <a href="{% url 'contact' %}"
                         class="text-slate-600 hover:text-primary font-bold transition-colors">Contact</a>
 
-                    <button onclick="window.location.href='offering.html'"
-                        class="bg-secondary text-primary px-6 py-2.5 rounded-full font-extrabold hover:bg-primary hover:text-white transition-all shadow-lg transform hover:-translate-y-0.5">
+                    <a href="{% url 'offering' %}"
+                        class="bg-secondary text-primary px-6 py-2.5 rounded-full font-extrabold hover:bg-primary hover:text-white transition-all shadow-lg transform hover:-translate-y-0.5 inline-block text-center">
                         Give Now
-                    </button>
+                    </a>
                 </div>
 
                 <div class="md:hidden flex items-center">
@@ -62,11 +71,11 @@
 
         <div id="mobile-menu"
             class="hidden md:hidden bg-white w-full border-t border-brandLight p-6 space-y-4 shadow-2xl">
-            <a href="index.html" class="block text-lg font-bold text-primary">Home</a>
-            <a href="about.html" class="block text-lg font-bold text-primary">About</a>
-            <a href="sermons.html" class="block text-lg font-bold text-primary">Sermons</a>
-            <a href="offering.html" class="block text-lg font-bold text-secondary">Give Online</a>
-            <a href="contact.html" class="block text-lg font-bold text-primary">Contact</a>
+            <a href="{% url 'home' %}" class="block text-lg font-bold text-primary">Home</a>
+            <a href="{% url 'about' %}" class="block text-lg font-bold text-primary">About</a>
+            <a href="{% url 'sermons' %}" class="block text-lg font-bold text-primary">Sermons</a>
+            <a href="{% url 'offering' %}" class="block text-lg font-bold text-secondary">Give Online</a>
+            <a href="{% url 'contact' %}" class="block text-lg font-bold text-primary">Contact</a>
         </div>
     </nav>
 
@@ -77,160 +86,53 @@
         <section id="home-page" class="page-transition active-page">
             <!-- Hero -->
             <div id="hero-carousel" class="relative h-[90vh] w-full overflow-hidden bg-primary">
-                <div id="slides-wrapper" class="relative h-full w-full">
-
-                    <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
-                        <div class="absolute inset-0 scale-110 ken-burns">
-                            <img src="images/f1.jpeg" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 hero-gradient"></div>
-                        <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
-                            <div
-                                class="max-w-4xl slide-content bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl">
-                                <span
-                                    class="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-bold text-xs uppercase tracking-[0.2em]">Soaring
-                                    by Revelation</span>
-                                <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] serif">A
-                                    Sanctuary of <br><span class="text-secondary italic">Divine Encounter</span></h1>
-                                <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto">Where prayer is the
-                                    oxygen and grace is the ground we stand upon. Experience the presence of God.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
-                        <div class="absolute inset-0 scale-110 ken-burns">
-                            <img src="images/f2.jpeg" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 hero-gradient"></div>
-                        <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
-                            <div
-                                class="max-w-4xl slide-content bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem]">
-                                <span
-                                    class="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-bold text-xs uppercase tracking-[0.2em]">Manifest
-                                    Presence</span>
-                                <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] serif">
-                                    Atmosphere of <br><span class="text-secondary italic">His Power</span></h1>
-                                <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto">Witnessing the tangible
-                                    move of the Holy Spirit through signs, wonders, and deep worship.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
-                        <div class="absolute inset-0 scale-110 ken-burns">
-                            <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&q=80&w=2000"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 hero-gradient"></div>
-                        <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
-                            <div
-                                class="max-w-4xl slide-content bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem]">
-                                <span
-                                    class="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-bold text-xs uppercase tracking-[0.2em]">The
-                                    Word of Truth</span>
-                                <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] serif">The
-                                    Gospel of <br><span class="text-secondary italic">Radical Grace</span></h1>
-                                <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto">Walking in the finished
-                                    work of Christ. Your life is a testimony of unmerited divine favor.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
-                        <div class="absolute inset-0 scale-110 ken-burns">
-                            <img src="https://images.unsplash.com/photo-1510531704581-5b2870972060?auto=format&fit=crop&q=80&w=2000"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 hero-gradient"></div>
-                        <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
-                            <div
-                                class="max-w-4xl slide-content bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem]">
-                                <span
-                                    class="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-bold text-xs uppercase tracking-[0.2em]">Kingdom
-                                    Community</span>
-                                <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] serif">A Place
-                                    to <br><span class="text-secondary italic">Belong & Grow</span></h1>
-                                <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto">More than a church, we
-                                    are a family. Find your purpose and your people at GOGAP.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
-                        <div class="absolute inset-0 scale-110 ken-burns">
-                            <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&q=80&w=2000"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 hero-gradient"></div>
-                        <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
-                            <div
-                                class="max-w-4xl slide-content bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem]">
-                                <span
-                                    class="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-bold text-xs uppercase tracking-[0.2em]">Spiritual
-                                    Altar</span>
-                                <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] serif">
-                                    Strategic & <br><span class="text-secondary italic">Effective Prayer</span></h1>
-                                <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto">Building spiritual
-                                    capacity and shifting atmospheres through the engine of intercession.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
-                        <div class="absolute inset-0 scale-110 ken-burns">
-                            <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80&w=2000"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 hero-gradient"></div>
-                        <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
-                            <div
-                                class="max-w-4xl slide-content bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem]">
-                                <span
-                                    class="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-bold text-xs uppercase tracking-[0.2em]">Generation
-                                    of Power</span>
-                                <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] serif">Raising
-                                    <br><span class="text-secondary italic">Kingdom Giants</span>
-                                </h1>
-                                <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto">Equipping the next
-                                    generation with the revelation and fire needed to impact the world.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute bottom-20 left-0 w-full z-30 flex flex-col sm:flex-row gap-4 justify-center px-4">
-                    <button onclick="navigateTo('contact')"
-                        class="bg-secondary text-primary px-8 py-4 rounded-2xl text-lg font-black hover:bg-white transition-all shadow-2xl flex items-center justify-center gap-2">
-                        Join Us This Sunday <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </button>
-                    <button onclick="navigateTo('sermons')"
-                        class="bg-white/10 backdrop-blur-lg border border-white/30 text-white px-8 py-4 rounded-2xl text-lg font-black hover:bg-white/20 transition-all">
-                        Watch Sermons
-                    </button>
-                </div>
-
-                <div class="absolute bottom-10 left-0 w-full z-30 flex justify-center gap-3">
-                    <div class="carousel-dot w-10 h-1 bg-white/20 rounded-full overflow-hidden relative">
-                        <div class="dot-progress absolute left-0 top-0 h-full bg-secondary w-0"></div>
-                    </div>
-                    <div class="carousel-dot w-10 h-1 bg-white/20 rounded-full overflow-hidden relative">
-                        <div class="dot-progress absolute left-0 top-0 h-full bg-secondary w-0"></div>
-                    </div>
-                    <div class="carousel-dot w-10 h-1 bg-white/20 rounded-full overflow-hidden relative">
-                        <div class="dot-progress absolute left-0 top-0 h-full bg-secondary w-0"></div>
-                    </div>
-                    <div class="carousel-dot w-10 h-1 bg-white/20 rounded-full overflow-hidden relative">
-                        <div class="dot-progress absolute left-0 top-0 h-full bg-secondary w-0"></div>
-                    </div>
-                    <div class="carousel-dot w-10 h-1 bg-white/20 rounded-full overflow-hidden relative">
-                        <div class="dot-progress absolute left-0 top-0 h-full bg-secondary w-0"></div>
-                    </div>
-                    <div class="carousel-dot w-10 h-1 bg-white/20 rounded-full overflow-hidden relative">
-                        <div class="dot-progress absolute left-0 top-0 h-full bg-secondary w-0"></div>
-                    </div>
+    <div id="slides-wrapper" class="relative h-full w-full">
+        {% for slide in slides %}
+        <div class="hero-slide absolute inset-0 w-full h-full opacity-0 z-0">
+            <div class="absolute inset-0 scale-110 ken-burns">
+                <img src="{{ slide.image.url }}" class="w-full h-full object-cover" alt="{{ slide.title }}">
+            </div>
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="relative z-10 h-full flex items-center justify-center text-center px-4">
+                <div class="max-w-4xl slide-content bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-bold text-xs uppercase tracking-[0.2em]">
+                        {{ slide.sub_heading }}
+                    </span>
+                    <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] serif">
+                        {{ slide.title|safe }}
+                    </h1>
+                    <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto">
+                        {{ slide.description }}
+                    </p>
                 </div>
             </div>
+        </div>
+        {% empty %}
+        <div class="h-full flex items-center justify-center text-white">
+            <p>Please add hero slides in the admin panel.</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="absolute bottom-20 left-0 w-full z-30 flex flex-col sm:flex-row gap-4 justify-center px-4">
+        <a href="{% url 'contact' %}"
+            class="bg-secondary text-primary px-8 py-4 rounded-2xl text-lg font-black hover:bg-white transition-all shadow-2xl flex items-center justify-center gap-2">
+            Join Us This Sunday <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+        <a href="{% url 'sermons' %}"
+            class="bg-white/10 backdrop-blur-lg border border-white/30 text-white px-8 py-4 rounded-2xl text-lg font-black hover:bg-white/20 transition-all text-center">
+            Watch Sermons
+        </a>
+    </div>
+
+    <div class="absolute bottom-10 left-0 w-full z-30 flex justify-center gap-3">
+        {% for slide in slides %}
+        <div class="carousel-dot w-10 h-1 bg-white/20 rounded-full overflow-hidden relative">
+            <div class="dot-progress absolute left-0 top-0 h-full bg-secondary w-0"></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
             <!-- about ua -->
             <section id="about-preview" class="py-24 bg-white overflow-hidden">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
